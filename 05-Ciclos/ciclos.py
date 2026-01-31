@@ -24,3 +24,7 @@ a=0
 for i in range(20): 
     a+=1
     print(a)
+
+#   eval "$(oh-my-posh init bash)"
+
+
