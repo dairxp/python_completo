@@ -18,10 +18,17 @@ for persona,edad in personas.items():
 	#print(persona)
 	print(f"Mi nombre es {persona} y mi edad es: {edad}")
 """
-
+print
 #agregar elemento
 
 personas['tomas']=30
 print(personas)
 
-"eliminar elemento de diccioanrio"
+# Eliminar elemento de diccioanrio
+
+personas.pop('bruno')
+print(f"Diccinario con eliminacion persona {personas}")
+
+#Editar elemnto de diccioanrio
+personas["maria"]=50
+print(f"Diccinario Editado de persona {personas}")
