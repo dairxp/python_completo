@@ -1,1 +1,14 @@
 <h1> Tasks -- Render desde django template</h1>
+{% for x in tasks %}
+    <div>
+        <h2>{{x.title}}</h2>
+        <p>En description tenemos: {{x.description}}</p>
+        <p>Project =  {{x.project.name}}</p>
+        <button>
+            Delete
+        </button>
+        <button>
+            Update
+        </button>
+    </div>
+{% endfor %}

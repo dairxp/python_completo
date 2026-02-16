@@ -1,2 +1,4 @@
 <h1>Projects -- desde Render</h1>
-<p>{{projects_temp}}</p>
+{% for project in projects_temp %}
+	<h3>{{ project.name }}</h3>
+{% endfor %}
