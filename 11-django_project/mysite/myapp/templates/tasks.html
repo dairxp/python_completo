@@ -1,14 +1,26 @@
 <h1> Tasks -- Render desde django template</h1>
 {% for x in tasks %}
     <div>
-        <h2>{{x.title}}</h2>
-        <p>En description tenemos: {{x.description}}</p>
+        {# Comentario de jinja 2 #}
+        <!--Comemtario en html-->
+        
+        {# nota: Este es una tarea - #}
+        <h2>{% if x.done == False %} 🕑 {% else %} ✅ {% endif %}{{ x.title}}</h2>
+
+        {% if x.done == False %}
+        <p>Tarea pendiente</p>
+
+        {% else %}
+        <p>Tarea realizada</p>
+        {% endif%}
+
+        
         <p>Project =  {{x.project.name}}</p>
         <button>
             Delete
         </button>
         <button>
-            Update
+            🗹Done
         </button>
     </div>
 {% endfor %}
