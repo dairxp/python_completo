@@ -1,3 +1,6 @@
+{% extends 'layouts/base2.html' %}
+
+{% block content %}
 <h1> Tasks -- Render desde django template</h1>
 {% for x in tasks %}
     <div>
@@ -24,3 +27,5 @@
         </button>
     </div>
 {% endfor %}
+
+{% endblock %}
