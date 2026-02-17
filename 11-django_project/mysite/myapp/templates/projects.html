@@ -1,4 +1,10 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
 <h1>Projects -- desde Render</h1>
 {% for project in projects_temp %}
 	<h3>{{ project.name }}</h3>
 {% endfor %}
+
+{% endblock %}
