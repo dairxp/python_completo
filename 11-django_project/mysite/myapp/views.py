@@ -49,8 +49,5 @@ def create_project(request):
             'form' : CreateNewProjects()
         })
     else:
-        project= Project.objects.create(name=request.POST["name"])
-        print(project)
-        return render(request, 'projects/create_project.html', {
-            'form' : CreateNewProjects()
-        })
+        Project.objects.create(name=request.POST["name"])
+        redirect('projects')
