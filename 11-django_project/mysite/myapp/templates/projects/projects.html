@@ -4,7 +4,11 @@
 
 <h1>Projects -- desde Render</h1>
 {% for project in projects_temp %}
-	<h3>{{ project.name }}</h3>
+	<article class="card">
+		<a href="">
+			<h3>{{ project.name }}</h3>
+		</a>
+	</article>
 {% endfor %}
 
 {% endblock %}
