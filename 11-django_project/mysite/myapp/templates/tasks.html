@@ -2,8 +2,8 @@
 {% for x in tasks %}
     <div>
         {# Comentario de jinja 2 #}
-        <!--Comemtario en html-->
-        
+        <!--Comemtario en html :)-->
+
         {# nota: Este es una tarea - #}
         <h2>{% if x.done == False %} 🕑 {% else %} ✅ {% endif %}{{ x.title}}</h2>
 
