@@ -1,11 +1,44 @@
 class Car:
-    def __init__(self, manufacturer=None, model=None, color='', cylinder=0.00):
+    def __init__(self, manufacturer : str | None = None, 
+                model : str | None = None, 
+                color : str | None = None, 
+                cylinder : float | None =0.00,
+                tank_capacity : float | None = 40.0):
         #atributo oculto __
         self.__manufacturer = manufacturer
         self.__model = model
         self.__color = color
         self.__cylinder = cylinder
         self._other = 'motor'
+        self.__tank_capacity = tank_capacity
+
+    @classmethod
+    def empty(cls): 
+        return cls()
+    
+    @classmethod
+    def basic(cls, manufacturer: str, model: str):
+        return cls(manufacturer, model)
+    
+    @classmethod
+    def with_color(cls, manufacturer: str, model: str, color:str):
+        return cls(manufacturer, model, color)
+    
+    @classmethod
+    def only_color(cls, manufacturer: str, color:str):
+        return cls(manufacturer, None, color)
+    
+    @classmethod
+    def with_cylinder(cls, manufacturer: str, model: str, color:str, cylinder: float):
+        return cls(manufacturer, model, color, cylinder)
+
+    @classmethod
+    def full_spec(cls, manufacturer: str, model: str, color:str, cylinder: float, tank: float):
+        return cls(manufacturer, model, color,cylinder, tank)
+    
+    @classmethod
+    def only_tank(cls, manufacturer: str, model: str, tank: float):
+        return cls(manufacturer, model, None, None, tank)
     
     def set_model(self, value):
         self.__model = value
@@ -39,7 +72,26 @@ class Car:
         detail += f'cylinder: {self.__cylinder} \n\n'
         return detail
     
+    def accelerate(self, rpm, speed):
+        return f'El auto {self.__manufacturer} acelerando a {rpm} rpm y a {speed}km/h'
+    
+    def brake(self):
+        return f'{self.__manufacturer} {self.__model} frenando'
+    
+
+    def accelerate_and_brake(self, rpm, speed):
+        accelerating = self.accelerate(rpm, speed)
+        braking = self.brake()
+        return f'{accelerating} \n {braking}'
+
+    def calculate_consumption(self, km, fuel_percentage):
+        if isinstance(fuel_percentage, int):
+            fuel_percentage= fuel_percentage/100.00
+        return km/(fuel_percentage*self.__tank_capacity)
+
+
+
     def __str__(self):
-        return f'Car(manufacturer={self.__manufacturer}, model={self.__model}, color={self.__color}, cylinder={self.__cylinder})'
+        return f'Car(manufacturer={self.__manufacturer}, model={self.__model}, color={self.__color}, cylinder={self.__cylinder}, tank={self.__tank_capacity})'
     def __repr__(self):
-        return f'{{manufacturer: {self.__manufacturer}, model: {self.__model}, color: {self.__color}, cylinder: {self.__cylinder}}}'
+        return f'{{manufacturer: {self.__manufacturer}, model: {self.__model}, color: {self.__color}, cylinder: {self.__cylinder}, tank={self.__tank_capacity}}}'
