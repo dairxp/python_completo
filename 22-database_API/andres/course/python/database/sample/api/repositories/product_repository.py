@@ -2,7 +2,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
-import mysql.connector
 
 from andres.course.python.database.sample.api.models.product import Product
 

@@ -20,67 +20,79 @@ class ProductRepositoryImpl(Repository):
             # Crear cursor (también se cierra automáticamente)
             with connection.cursor() as cursor:
                 cursor.execute("SELECT id, name, price, created_at FROM products")
-                for product_id, name, price, create_at in cursor.fetchall():
-                    products.append(Product(product_id, name, price, create_at))
+                for product_id, name, price, created_at in cursor.fetchall():
+                    products.append(Product(product_id, name, price, created_at))
 
         except mysql.connector.Error as e:
             print("Error al conectar o consultar la base de datos:", e)
+            raise
 
         return products
 
     def find_by_id(self, product_id: int) -> Optional[Product]:
         connection = DatabaseConnection().get_connection()
-
-        with connection.cursor() as cursor:
-            cursor.execute(
-                "SELECT id, name, price, created_at FROM products WHERE id = %s",
-                (product_id,)
-            )
-            row = cursor.fetchone()
-
-            if row:
-                return Product(
-                    id=row[0],
-                    name=row[1],
-                    price=row[2],
-                    created_at=row[3]
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    "SELECT id, name, price, created_at FROM products WHERE id = %s",
+                    (product_id,)
                 )
+                row = cursor.fetchone()
+
+                if row:
+                    return Product(
+                        id=row[0],
+                        name=row[1],
+                        price=row[2],
+                        created_at=row[3]
+                    )
+        except mysql.connector.Error as e:
+            print("Error al conectar o consultar la base de datos:", e)
+
         return None
 
     def save(self, product: Product) -> Product:
         connection = DatabaseConnection().get_connection()
 
-        if product.id is not None and product.id > 0:
-            # UPDATE
-            sql = """
-                UPDATE products
-                SET name = %s, price = %s
-                WHERE id = %s
-            """
-            values = (product.name, product.price, product.id)
-        else:
-            # INSERT
-            sql = """
-                INSERT INTO products (name, price, created_at)
-                VALUES (%s, %s, %s)
-            """
-            values = (product.name, product.price, product.created_at)
+        try:
+            if product.id is not None and product.id > 0:
+                # UPDATE
+                sql = """
+                    UPDATE products
+                    SET name = %s, price = %s
+                    WHERE id = %s
+                """
+                values = (product.name, product.price, product.id)
+            else:
+                # INSERT
+                sql = """
+                    INSERT INTO products (name, price, created_at)
+                    VALUES (%s, %s, %s)
+                """
+                values = (product.name, product.price, product.created_at)
 
-        with connection.cursor() as cursor:
-            cursor.execute(sql, values)
-            connection.commit()
+            with connection.cursor() as cursor:
+                cursor.execute(sql, values)
+                connection.commit()
 
-            # Si es un insert, asignar el id generado al objeto
-            if cursor.lastrowid:
-                product.id = cursor.lastrowid
+                # Si es un insert, asignar el id generado al objeto
+                if cursor.lastrowid:
+                    product.id = cursor.lastrowid
+        except mysql.connector.Error as e:
+            print("Error al conectar o consultar la base de datos:", e)
 
         return product
 
     def remove(self, product_id: int) -> bool:
         connection = DatabaseConnection().get_connection()
 
-        with connection.cursor() as cursor:
-            cursor.execute("DELETE FROM products WHERE id = %s", (product_id,))
-            connection.commit()
-            return cursor.rowcount > 0  # True si borró algún registro
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("DELETE FROM products WHERE id = %s", (product_id,))
+                connection.commit()
+                return cursor.rowcount > 0  # True si borró algún registro
+        except mysql.connector.Error as e:
+            print("Error al conectar o consultar la base de datos:", e)
+
+        return False
 
