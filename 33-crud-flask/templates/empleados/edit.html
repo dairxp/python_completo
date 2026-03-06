@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h3>Formulario para editar</h3>
+    {% for empleado in empleados %}
+        
+        <form action="/store" method="post" enctype="multipart/form-data">
+
+            <input type="text" value="{{empleado[0]}}" name="txtID" id="txtID">
+            Nombre:
+            <input type="text" value="{{empleado[1]}}" name="txtNombre" id="txtNombre">
+            <br>
+            Correo:
+            <input type="text" value="{{empleado[2]}}" name="txtCorreo" id="txtCorreo">
+            <br>
+            Foto:
+            {{empleado[3]}}
+            <input type="file" name="txtFoto" id="txtFoto">
+            <br>
+            <input type="submit" value="Agregar">
+        </form>
+    {% endfor %}
+</body>
+</html>
