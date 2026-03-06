@@ -7,31 +7,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Hola Flask</h1>
-    <table>
-        <thead>
-            <th>ID</th>
-            <th>NombreFoto</th>
-            <th>Correo</th>
-            <th>Foto</th>
-            <th>Acciones</th>
-        </thead>
-        <tbody>
-            {% for empleado in empleados %}
+    <div class="container mt-5">
+        <h1>Gestión de Empleados</h1>
+        <a href="/create" class="btn btn-primary mb-3">+ Crear Empleado</a>
+        
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
                 <tr>
-                    <td>{{empleado[0]}}</td>
-                    <td>{{empleado[1]}}</td>
-                    <td>{{empleado[2]}}</td>
-                    <td>{{empleado[3]}}</td>
-                    <td>
-                        <a href="/edit/{{empleado[0]}}">Editar</a> | 
-                        <a href="/destroy/{{empleado[0]}}">Eliminar</a>
-                    </td>                
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Foto</th>
+                    <th>Acciones</th>
                 </tr>
-            {% endfor %}
-            
-
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for empleado in empleados %}
+                    <tr>
+                        <td>{{empleado[0]}}</td>
+                        <td>{{empleado[1]}}</td>
+                        <td>{{empleado[2]}}</td>
+                        <td><img src="/uploads/{{empleado[3]}}" width="80" height="80" alt="Foto de {{empleado[1]}}" class="rounded"></td>
+                        <td>
+                            <a href="/edit/{{empleado[0]}}" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="/destroy/{{empleado[0]}}" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar?')">Eliminar</a>
+                        </td>                
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if empleados|length == 0 %}
+            <p class="text-center">No hay empleados registrados</p>
+        {% endif %}
+    </div>
+</body>
 </body>
 </html>
