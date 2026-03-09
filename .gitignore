@@ -29,6 +29,10 @@ db.sqlite3
 .DS_Store
 Thumbs.db
 
+# Archivos privados / documentos de identidad
+dni.jpg
+*.dni.*
+
 # Logs
 *.log
 
