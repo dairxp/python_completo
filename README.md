@@ -1,4 +1,4 @@
-# Python Completo
+# Python Completo Course
 
 Repositorio de aprendizaje y proyectos en Python que cubre desde fundamentos hasta desarrollo de aplicaciones con frameworks modernos.
 
@@ -44,4 +44,4 @@ Los proyectos más complejos incluyen:
 
 ---
 
-DairXP -- Aprendiendo Zzz
+DairXP -- Aprendiendo Zzzz
