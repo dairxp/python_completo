@@ -1,0 +1,158 @@
+
+    {
+        "id": 1,
+        "name": "Carlos Ramirez",
+        "country": "Mexico",
+        "age": 29,
+        "experience": [
+            {
+                "title": "Frontend Developer",
+                "location": "Mexico",
+                "start_date": "2020"
+            }
+        ],
+        "skills": [
+            {
+                "name": "React", 
+                "year": 2
+            },
+            {
+                "name": "CSS", 
+                "year": 3
+            }
+        ],
+        "languages": [
+            {
+                "name": "Spanish", 
+                "level": "Nativo"
+            },
+            {
+                "name": "English", 
+                "level": "Intermedio"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Ana Torres",
+        "country": "Colombia",
+        "age": 27,
+        "experience": [
+            {
+                "title": "Backend Developer",
+                "location": "Colombia",
+                "start_date": "2019"
+            }
+        ],
+        "skills": [
+            {
+                "name": "Kotlin", 
+                "year": 3},
+            {
+                "name": "Android", 
+                "year": 2}
+        ],
+        "languages": [
+            {
+                "name": "Spanish", 
+                "level": "Nativo"
+            },
+            {
+                "name": "English", 
+                "level": "Intermedio"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Luis Mendoza",
+        "country": "Peru",
+        "age": 31,
+        "experience": [
+            {
+                "title": "Full Stack Developer",
+                "location": "Peru",
+                "start_date": "2018"
+            }
+        ],
+        "skills": [
+            {
+                "name": "Docker", 
+                "year": 4},
+            {
+                "name": "AWS", 
+                "year": 3}
+        ],
+        "languages": [
+            {
+                "name": "Spanish", 
+                "level": "Nativo"},
+            {
+                "name": "English", 
+                "level": "Avanzado"}
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Maria Gomez",
+        "country": "Argentina",
+        "age": 26,
+        "experience": [
+            {
+                "title": "Mobile Developer",
+                "location": "Argentina",
+                "start_date": "2021"
+            }
+        ],
+        "skills": [
+            {
+                "name": "Flutter", 
+                "year": 2},
+            {
+                "name": "Swift", 
+                "year": 1}
+        ],
+        "languages": [
+            {
+                "name": "Spanish", 
+                "level": "Nativo"
+            },
+            {
+                "name": "English", 
+                "level": "Intermedio"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Pedro Castillo",
+        "country": "Chile",
+        "age": 33,
+        "experience": [
+            {
+                "title": "DevOps Engineer",
+                "location": "Chile",
+                "start_date": "2017"
+            }
+        ],
+        "skills": [
+            {
+                "name": "Docker", 
+                "year": 4
+            },
+            {
+                "name": "AWS", 
+                "year": 3
+            }
+        ],
+        "languages": [
+            {
+                "name": "Spanish", 
+                "level": "Nativo"
+            },
+            {
+                "name": "English", 
+                "level": "Avanzado"
+            }
+        ]
+    }
