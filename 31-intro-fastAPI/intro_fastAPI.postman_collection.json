@@ -1,0 +1,1042 @@
+{
+  "info": {
+    "_postman_id": "4015e57e-f488-44e6-81b7-a25cee60b901",
+    "name": "intro_fastAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52043018",
+    "_collection_link": "https://go.postman.co/collection/52043018-4015e57e-f488-44e6-81b7-a25cee60b901?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ObtenerProductos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/productos",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "productos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AgregarProductos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/productos?nombre=mouse&precio=200&en_stock=true",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "productos"
+          ],
+          "query": [
+            {
+              "key": "nombre",
+              "value": "mouse"
+            },
+            {
+              "key": "precio",
+              "value": "200"
+            },
+            {
+              "key": "en_stock",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarProductos",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/productos/0?nombre=celular",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "productos",
+            "0"
+          ],
+          "query": [
+            {
+              "key": "nombre",
+              "value": "celular"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarProductos",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/productos/0",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "productos",
+            "0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "hola Fast",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/users",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get user",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/user/1/12",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "user",
+            "1",
+            "12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_parametro_query",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/person/2?edad=20&name=Jose",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "person",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "edad",
+              "value": "20"
+            },
+            {
+              "key": "name",
+              "value": "Jose"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getWelcome",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/welcome/Jose/Maria",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "welcome",
+            "Jose",
+            "Maria"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getSuma",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "getDev",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getDev_id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PostDev-sin clase",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Frontend Developer\",\r\n                \"location\": \"Mexico\",\r\n                \"start_date\": \"2020\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"React\", \r\n                \"year\": 2\r\n            },\r\n            {\r\n                \"name\": \"CSS\", \r\n                \"year\": 3\r\n            }\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers_sin/?id=1&name=Carlos Mazo&country=Mexico&age=20",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers_sin",
+            ""
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "name",
+              "value": "Carlos Mazo"
+            },
+            {
+              "key": "country",
+              "value": "Mexico"
+            },
+            {
+              "key": "age",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PostDev-con clase",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Ana Torres\",\r\n        \"country\": \"Colombia\",\r\n        \"age\": 27,\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Backend Developer\",\r\n                \"location\": \"Colombia\",\r\n                \"start_date\": \"2019\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"Kotlin\", \r\n                \"year\": 3},\r\n            {\r\n                \"name\": \"Android\", \r\n                \"year\": 2}\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteDev",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Frontend Developer\",\r\n                \"location\": \"Mexico\",\r\n                \"start_date\": \"2020\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"React\", \r\n                \"year\": 2\r\n            },\r\n            {\r\n                \"name\": \"CSS\", \r\n                \"year\": 3\r\n            }\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers/2",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/login?username=dairxp&password=123456",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "login"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "dairxp",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get DevAutorizado",
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get DevAutorizado_Skiill",
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers/1/skills",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers",
+            "1",
+            "skills"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post_DevMongo",
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"id\": 4,\r\n        \"name\": \"Maria Gomez\",\r\n        \"country\": \"Argentina\",\r\n        \"age\": 26,\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Mobile Developer\",\r\n                \"location\": \"Argentina\",\r\n                \"start_date\": \"2021\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"Flutter\", \r\n                \"year\": 2},\r\n            {\r\n                \"name\": \"Swift\", \r\n                \"year\": 1}\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_DevMongo",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Carlos Ramirez\",\r\n        \"country\": \"Mexico\",\r\n        \"age\": 29,\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Frontend Developer\",\r\n                \"location\": \"Mexico\",\r\n                \"start_date\": \"2020\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"React\", \r\n                \"year\": 2\r\n            },\r\n            {\r\n                \"name\": \"CSS\", \r\n                \"year\": 3\r\n            }\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_DevMongo_id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Carlos Ramirez\",\r\n        \"country\": \"Mexico\",\r\n        \"age\": 29,\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Frontend Developer\",\r\n                \"location\": \"Mexico\",\r\n                \"start_date\": \"2020\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"React\", \r\n                \"year\": 2\r\n            },\r\n            {\r\n                \"name\": \"CSS\", \r\n                \"year\": 3\r\n            }\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers/69b45bf1364e64aad5575bbd",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers",
+            "69b45bf1364e64aad5575bbd"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_DevMongo_id skills",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Carlos Ramirez\",\r\n        \"country\": \"Mexico\",\r\n        \"age\": 29,\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Frontend Developer\",\r\n                \"location\": \"Mexico\",\r\n                \"start_date\": \"2020\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"React\", \r\n                \"year\": 2\r\n            },\r\n            {\r\n                \"name\": \"CSS\", \r\n                \"year\": 3\r\n            }\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers/69b442d2646ff9516b3d9e21/experience",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers",
+            "69b442d2646ff9516b3d9e21",
+            "experience"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_DevMongo_id skills Copy",
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Ana Torres\",\r\n        \"country\": \"Colombia\",\r\n        \"age\": 27,\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Backend Developer\",\r\n                \"location\": \"Colombia\",\r\n                \"start_date\": \"2019\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"Kotlin\", \r\n                \"year\": 3},\r\n            {\r\n                \"name\": \"Android\", \r\n                \"year\": 2}\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers/69b442d2646ff9516b3d9e21",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers",
+            "69b442d2646ff9516b3d9e21"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_DevMongo_id skills Copy",
+      "request": {
+        "auth": {
+          "type": "jwt",
+          "jwt": [
+            {
+              "key": "algorithm",
+              "value": "HS256",
+              "type": "string"
+            },
+            {
+              "key": "isSecretBase64Encoded",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "payload",
+              "value": "{}",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "headerPrefix",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "queryParamKey",
+              "value": "token",
+              "type": "string"
+            },
+            {
+              "key": "header",
+              "value": "{}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhaXJ4cCIsInBhc3N3b3JkIjoiMTIzNDU2In0.unrmvqfkHeonrTPkj2tDITpRa3Md813_-6CNg6_8OHI",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Carlos Ramirez\",\r\n        \"country\": \"Mexico\",\r\n        \"age\": 29,\r\n        \"experience\": [\r\n            {\r\n                \"title\": \"Frontend Developer\",\r\n                \"location\": \"Mexico\",\r\n                \"start_date\": \"2020\"\r\n            }\r\n        ],\r\n        \"skills\": [\r\n            {\r\n                \"name\": \"React\", \r\n                \"year\": 2\r\n            },\r\n            {\r\n                \"name\": \"CSS\", \r\n                \"year\": 3\r\n            }\r\n        ],\r\n        \"languages\": [\r\n            {\r\n                \"name\": \"Spanish\", \r\n                \"level\": \"Nativo\"\r\n            },\r\n            {\r\n                \"name\": \"English\", \r\n                \"level\": \"Intermedio\"\r\n            }\r\n        ]\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/developers/69b45bf1364e64aad5575bbd",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "developers",
+            "69b45bf1364e64aad5575bbd"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

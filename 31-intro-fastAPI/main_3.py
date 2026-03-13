@@ -111,21 +111,21 @@ async def udpate_developer(data: Developer, id: str):
             await db.developers.update_one({'_id': ObjectId(id)},{'$set': jsonable_encoder(data)})            
             return JSONResponse(status_code=201, content={'message': 'Desarrollador modificado'})
         else:
-            return JSONResponse(status_code=404, content={'message': "No encontrado"})
+            return JSONResponse(status_code=400, content={'message': "No encontrado"})
     except Exception as error:
         print(error)
         return JSONResponse(status_code=500, content={'message':"Ocurrio un error"})
 
 @app.delete("/developers/{id}")
-async def delete_developer(data: Developer, id: str):
+async def delete_developer(id: str):
     try:
         db= await connection()
         developer= await db.developers.find_one({"_id":ObjectId(id)})
         if  developer:
             await db.developers.delete_one({'_id': ObjectId(id)})            
-            return JSONResponse(status_code=201, content={'message': 'Desarrollador eliminado'})
+            return JSONResponse(status_code=200, content={'message': 'Desarrollador eliminado'})
         else:
-            return JSONResponse(status_code=404, content={'message': "No encontrado"})
+            return JSONResponse(status_code=400, content={'message': "No encontrado"})
     except Exception as error:
         print(error)
         return JSONResponse(status_code=500, content={'message':"Ocurrio un error"})
