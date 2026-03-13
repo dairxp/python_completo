@@ -1,13 +1,45 @@
-from typing import List, Optional
-
-import uvicorn
-from fastapi import FastAPI, Response, status
+from fastapi import FastAPI, Response, status, HTTPException, Request, Depends
 from models.developer import Developer
+from typing import List, Optional
+from fastapi.responses import PlainTextResponse, JSONResponse
+import jwt
 
 app = FastAPI()
 
 developers = []
 
+is_loggged = True
+
+users = [{
+    "username": "dairxp",
+    "password": "123456"
+}]
+
+'''
+@app.middleware("http")
+async def check_logged(request: Request, call_next):
+    #print(f'Accediendo a la ruta: {request.url}')
+    if is_loggged:
+        response = await call_next(request)
+        return response
+    return JSONResponse(content={"message": "No autizado, inicie sesión"}, status_code=401)
+'''
+
+def verify_token(request: Request):
+    token = request.headers['Authorization']
+    data = jwt.decode(token, "my_secret", algorithms=["HS256"])
+    for user in users:
+        if user['username'] == data['username']:
+            return True
+    return False
+    
+@app.post("/login")
+def login(username: str, password:str):
+    for user in users:
+        if user['username'] == username and user['password'] == password:
+            return jwt.encode(user, "my_secret", algorithm="HS256")
+    return "Datos incorrectos :("
+    
 
 @app.get("/")
 def read_root():
@@ -15,9 +47,11 @@ def read_root():
 
 
 @app.get("/developers")
-def read_developers():
-    return developers
-
+def read_developers(authorized: bool = Depends(verify_token)):
+    if authorized:
+        return developers
+    else:
+        return "No autorizado"
 
 @app.get("/developers/{id}")
 def read_developer(id: int):
@@ -28,13 +62,16 @@ def read_developer(id: int):
     return "Developer no encontrado"
 
 
+#ruta autorizado JWT
 @app.get("/developers/{id}/skills")
-def read_skills(id: int):
-    for developer in developers:
-        if developer.id  == id:
-            return developer.skills
-    return "Developer no encontrado"
-
+def read_skills(id: int, authorized: bool=Depends(verify_token)):
+    if authorized:
+        for developer in developers:
+            if developer.id  == id:
+                return developer.skills
+        return "Developer no encontrado"
+    else: 
+        return "No autoizado"
 
 @app.get("/developers/{id}/experience")
 def read_experience(id: int):
@@ -71,8 +108,17 @@ def create__new_developer_sin_clase(id:int, name:str, country:str, age:int, expe
 
 @app.post("/developers")
 def create__new_developer(developer: Developer):
+    if len(developer.name)<5:
+        raise HTTPException(status_code=400, detail= "Nombre no puede tener menos de 5 caracteres")
+    
+    if developer.age>100:
+        raise HTTPException(status_code=400, detail= "Edad Inncorrecta")
+    if developer.skill>100:
+        raise HTTPException(status_code=400, detail= "Requieren habilidades")
+    
     developers.append(developer)
-    return developers
+    
+    return JSONResponse(status_code=201, content={"message":"Registro Correcto"})
 
 
 @app.delete("/developers/{id}")
