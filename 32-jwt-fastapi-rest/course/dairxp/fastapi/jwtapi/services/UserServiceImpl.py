@@ -7,6 +7,7 @@ from course.dairxp.fastapi.jwtapi.entities.user import User
 from course.dairxp.fastapi.jwtapi.respositories.user_repository import UserRepository
 from course.dairxp.fastapi.jwtapi.schemas.user_dto import UserDto
 from course.dairxp.fastapi.jwtapi.schemas.user_request import UserRequest
+from course.dairxp.fastapi.jwtapi.security.password import hash_password
 from course.dairxp.fastapi.jwtapi.services.user_service import UserService
 
 
@@ -33,7 +34,7 @@ class UserServiceImpl(UserService):
     def create(self, user: UserRequest) -> UserDto:
         if self._repo.find_by_email(str(user.email)):
             raise ValueError('Email ya existe.')
-        user_entity = User(email=user.email, password=user.password)
+        user_entity = User(email=user.email, password=hash_password(user.password))
         try:
             saved = self._repo.create_user(user_entity)
             return UserDto.model_validate(saved)
