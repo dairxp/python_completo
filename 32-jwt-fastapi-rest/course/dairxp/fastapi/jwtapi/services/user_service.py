@@ -1,7 +1,8 @@
-from abc import abstractmethod
+from abc import abstractmethod,ABC
 from typing import List
-
 from course.dairxp.fastapi.jwtapi.schemas.user_dto import UserDto
+from course.dairxp.fastapi.jwtapi.schemas.user_request import UserRequest
+
 
 class UserService:
     @abstractmethod
@@ -14,5 +15,5 @@ class UserService:
     def find_by_email(self, email:str) -> UserDto | None:
         pass
     @abstractmethod
-    def find_by_user(self, user:str) -> UserDto | None:
+    def create(self, user:UserRequest) -> UserDto:
         pass
