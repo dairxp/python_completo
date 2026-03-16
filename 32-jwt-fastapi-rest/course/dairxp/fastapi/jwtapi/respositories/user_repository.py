@@ -14,6 +14,9 @@ class UserRepository(ABC):
     def find_all(self) -> List[User]:
         pass
 
-    @abstractmethod:
+    @abstractmethod
     def create_user(self, user: User) -> User:
+        pass
+
+    def create(self, user_entity):
         pass

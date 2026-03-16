@@ -19,6 +19,8 @@ class SQLAlchemyUserRepository(UserRepository):
         stmt = select(User).where(User.email == email)
         return self._db.scalar(stmt)
 
-    def create(self, user: User) -> User:
+    def create_user(self, user: User) -> User:
         self._db.add(user)
+        self._db.commit()
+        self._db.refresh(user)
         return user
