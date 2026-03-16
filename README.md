@@ -15,7 +15,8 @@ Repositorio de aprendizaje y proyectos en Python que cubre desde fundamentos has
 - **11-django_project**: Aplicación básica con Django
 - **15-Intermedio**: Web scraping y manejo de datos
 - **22-database_API**: Consultas a bases de datos
-- **31-crud-sqlalchemy**: CRUD con SQLAlchemy
+- **31-intro-fastapi**: FastAPI introducion + mongoDB
+- **32-jwt-fastapi**: Oauth y JWT FastAPI
 - **33-crud-flask**: CRUD con Flask
 - **35-crud-fastAPI**: CRUD con FastAPI
 
