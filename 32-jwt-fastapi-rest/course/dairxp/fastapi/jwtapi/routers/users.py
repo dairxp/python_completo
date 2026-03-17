@@ -5,24 +5,31 @@ from fastapi.params import Depends
 from starlette import status
 
 from course.dairxp.fastapi.jwtapi.dependencies.di import get_service
+from course.dairxp.fastapi.jwtapi.dependencies.security import get_current_user
+from course.dairxp.fastapi.jwtapi.entities.user import User
 from course.dairxp.fastapi.jwtapi.schemas.user_dto import UserDto
 from course.dairxp.fastapi.jwtapi.schemas.user_request import UserRequest
 from course.dairxp.fastapi.jwtapi.services.user_service import UserService
 
 router = APIRouter()
 @router.get('/', response_model=List[UserDto])
-def list_users(service: UserService = Depends(get_service)):
+def list_users(service: UserService = Depends(get_service),
+               current_user = Depends(get_current_user)):
     return service.find_all()
 
 @router.get('/{user_id}', response_model=UserDto)
-def get_user(user_id: int ,service:UserService = Depends(get_service)):
+def get_user(user_id: int ,service:UserService = Depends(get_service),
+             current_user: User= Depends(get_current_user)):
+    if user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="No puede ver usuarios de otro")
     user = service.find_by_id(user_id)
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User no existe")
     return user
 
 @router.post('/', response_model=UserDto, status_code=status.HTTP_201_CREATED)
-def create_user(user: UserRequest, service: UserService = Depends(get_service)):
+def create_user(user: UserRequest, service: UserService = Depends(get_service),
+                current_user = Depends(get_current_user)):
     try:
         return service.create(user)
     except ValueError as e:
