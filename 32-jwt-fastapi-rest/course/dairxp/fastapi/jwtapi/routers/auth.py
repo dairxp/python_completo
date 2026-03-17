@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException, status
 from fastapi.params import Depends
+from fastapi.security import OAuth2PasswordRequestForm
 
 from course.dairxp.fastapi.jwtapi.dependencies.di import get_service, get_repository
 from course.dairxp.fastapi.jwtapi.respositories.user_repository import UserRepository
@@ -16,3 +17,15 @@ def login(data:LoginInRequest, repository:UserRepository = Depends(get_repositor
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail= "Incorrect email or password")
     token =create_access_token(subject=str(user.id))
     return TokenDto(access_token=token)
+
+@router.post('/token/form', response_model=TokenDto)
+def login_form(data_form: OAuth2PasswordRequestForm =Depends(), repository:UserRepository = Depends(get_repository)):
+    user = repository.find_by_email(str(data_form.username))
+    if not user or not verify_password(data_form.password, str(user.password)):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail= "Incorrect email or password")
+    token =create_access_token(subject=str(user.id))
+    return TokenDto(access_token=token)
+
+@router.post('/token/form', response_model=TokenDto)
+def login_form(data_form: OAuth2PasswordRequestForm =Depends(), repository:UserRepository = Depends(get_repository)):
+    return login(LoginInRequest(str(data_form.username),data_form.password),
