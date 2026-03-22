@@ -19,13 +19,5 @@ def login(data:LoginInRequest, repository:UserRepository = Depends(get_repositor
     return TokenDto(access_token=token)
 
 @router.post('/token/form', response_model=TokenDto)
-def login_form(data_form: OAuth2PasswordRequestForm =Depends(), repository:UserRepository = Depends(get_repository)):
-    user = repository.find_by_email(str(data_form.username))
-    if not user or not verify_password(data_form.password, str(user.password)):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail= "Incorrect email or password")
-    token =create_access_token(subject=str(user.id))
-    return TokenDto(access_token=token)
-
-@router.post('/token/form', response_model=TokenDto)
-def login_form(data_form: OAuth2PasswordRequestForm =Depends(), repository:UserRepository = Depends(get_repository)):
-    return login(LoginInRequest(str(data_form.username),data_form.password),
+def login_form(data_form: OAuth2PasswordRequestForm = Depends(), repository: UserRepository = Depends(get_repository)):
+    return login(LoginInRequest(username=str(data_form.username), password=data_form.password), repository)
