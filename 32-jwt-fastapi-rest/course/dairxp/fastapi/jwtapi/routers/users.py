@@ -2,6 +2,7 @@ from typing import List
 
 from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends
+from fastapi.security import HTTPBearer
 from starlette import status
 
 from course.dairxp.fastapi.jwtapi.dependencies.di import get_service
@@ -12,6 +13,7 @@ from course.dairxp.fastapi.jwtapi.schemas.user_request import UserRequest
 from course.dairxp.fastapi.jwtapi.services.user_service import UserService
 
 router = APIRouter()
+bearer = HTTPBearer()
 @router.get('/', response_model=List[UserDto])
 def list_users(service: UserService = Depends(get_service),
                current_user = Depends(get_current_user)):
