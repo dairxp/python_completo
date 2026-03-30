@@ -47,3 +47,6 @@ htmlcov/
 
 # uv cache local (si aparece)
 .uv/
+
+instance/
+*.sqlite3

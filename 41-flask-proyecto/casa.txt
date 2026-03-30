@@ -1,1 +1,9 @@
 pip install flask flask_sqlalchemy flask_jwt_extended bcrypt
+
+
+======================================
+
+2. Generar migración
+flask db migrate -m "agregar campo price y ampliar name"
+3. Aplicar cambios
+flask db upgrade
