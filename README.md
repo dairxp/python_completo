@@ -8,17 +8,18 @@ Repositorio de aprendizaje y proyectos en Python que cubre desde fundamentos has
 - **03-Funciones**: Definición de funciones, argumentos, parámetros y valores de retorno
 - **05-Ciclos**: Bucles (for, while) y control de flujo
 - **06-Listas_py**: Operaciones con listas y métodos de lectura
-- **07-Manejo de archivos**: Lectura, escritura y gestión de archivos
+- **07-Manejo de archivos**: Lectura, escritura y gestion de archivos
 - **08-EstructuraDatos**: Listas, tuplas, diccionarios y conjuntos
 - **09-POO**: Programación orientada a objetos, clases y objetos
 - **10-Archivos**: Ejemplos adicionales de manipulación de archivos
 - **11-django_project**: Aplicación básica con Django
-- **15-Intermedio**: Web scraping y manejo de datos
+- **15-Intermedio-wget**: Web scraping y manejo de datos
 - **22-database_API**: Consultas a bases de datos
-- **31-intro-fastapi**: FastAPI introducion + mongoDB
-- **32-jwt-fastapi**: Oauth y JWT FastAPI
+- **31-intro-fastAPI**: FastAPI introduccion + mongoDB
+- **32-jwt-fastapi**: OAuth y JWT FastAPI
 - **33-crud-flask**: CRUD con Flask
 - **35-crud-fastAPI**: CRUD con FastAPI
+- **42-django_crud_auth**: CRUD con autenticacion (Django)
 
 ## Requisitos
 
@@ -38,10 +39,14 @@ python archivo.py
 
 ## Estructura de Proyectos
 
-Los proyectos más complejos incluyen:
+Los proyectos mas complejos incluyen:
 - **Django**: aplicación MVC completa
-- **Flask**: CRUD con templates
+- **Flask**: CRUD con plantillas
 - **FastAPI**: API RESTful con SQLAlchemy
+
+## Proyecto en linea
+
+- **Django CRUD Auth**: https://django-crud-auth-ibxf.onrender.com/
 
 ---
 
