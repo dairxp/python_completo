@@ -45,6 +45,9 @@ dni.jpg
 htmlcov/
 .pytest_cache/
 
+# Jupyter
+**/.ipynb_checkpoints/
+
 # uv cache local (si aparece)
 .uv/
 
