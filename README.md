@@ -1,25 +1,57 @@
-# Python Completo Course
+# Python Completo
 
-Repositorio de aprendizaje y proyectos en Python que cubre desde fundamentos hasta desarrollo de aplicaciones con frameworks modernos.
+Repositorio personal para practicar, repasar y consolidar conocimientos de Python desde nivel básico hasta desarrollo web y análisis de datos.
 
-## Contenido
+## Objetivo
 
-- **02-Variables**: Conceptos básicos de variables, tipos de datos y operadores
-- **03-Funciones**: Definición de funciones, argumentos, parámetros y valores de retorno
-- **05-Ciclos**: Bucles (for, while) y control de flujo
-- **06-Listas_py**: Operaciones con listas y métodos de lectura
-- **07-Manejo de archivos**: Lectura, escritura y gestion de archivos
-- **08-EstructuraDatos**: Listas, tuplas, diccionarios y conjuntos
-- **09-POO**: Programación orientada a objetos, clases y objetos
-- **10-Archivos**: Ejemplos adicionales de manipulación de archivos
-- **11-django_project**: Aplicación básica con Django
-- **15-Intermedio-wget**: Web scraping y manejo de datos
-- **22-database_API**: Consultas a bases de datos
-- **31-intro-fastAPI**: FastAPI introduccion + mongoDB
-- **32-jwt-fastapi**: OAuth y JWT FastAPI
-- **33-crud-flask**: CRUD con Flask
-- **35-crud-fastAPI**: CRUD con FastAPI
-- **42-django_crud_auth**: CRUD con autenticacion (Django)
+Este proyecto reúne ejercicios, mini proyectos y prácticas para fortalecer conceptos de:
+
+- variables y operadores
+- funciones y estructuras de control
+- listas, archivos y estructuras de datos
+- programación orientada a objetos
+- bases de datos
+- APIs con Flask y FastAPI
+- Django
+- análisis de datos y machine learning
+
+## Estructura del repositorio
+
+```text
+python_completo/
+├── 01-Basico/
+│   ├── 01-Variables/
+│   ├── 02-Funciones/
+│   ├── 03-Ciclos/
+│   ├── 04-Listas/
+│   ├── 05-Archivos/
+│   └── 06-Estructuras-de-Datos/
+├── 02-POO/
+│   └── 01-POO/
+├── 03-Frameworks/
+│   ├── 01-Django/
+│   ├── 02-Flask/
+│   └── 03-FastAPI/
+├── 04-BD/
+│   └── 01-Database-API/
+├── 05-Proyectos/
+│   ├── 01-CRUD-SQLAlchemy/
+│   ├── 02-CRUD-Flask/
+│   ├── 03-CRUD-FastAPI/
+│   ├── 04-Intro-FastAPI/
+│   ├── 05-JWT-FastAPI/
+│   ├── 06-Flask-Proyecto/
+│   └── 07-Django-CRUD-Auth/
+├── 06-Extras/
+│   ├── 01-Archivos/
+│   └── 02-Intermedio-wget/
+├── 07-Analisis-y-ML/
+│   ├── Emociones/
+│   ├── Excel a SQL/
+│   └── ML_ATL/
+├── README.md
+└── escalafon.html
+```
 
 ## Requisitos
 
@@ -27,27 +59,30 @@ Repositorio de aprendizaje y proyectos en Python que cubre desde fundamentos has
 pip install -r requirements.txt
 ```
 
-Cada carpeta de proyecto puede tener su propio archivo `requirements.txt`.
+Cada carpeta o proyecto puede tener su propio archivo de dependencias si aplica.
 
-## Uso
+## Cómo usarlo
 
-Navega a la carpeta del tema que deseas estudiar o ejecuta los scripts directamente:
+Puedes abrir la carpeta que corresponda a tu nivel o ejecutar scripts individuales:
 
 ```bash
-python archivo.py
+python nombre_archivo.py
 ```
 
-## Estructura de Proyectos
+## Proyectos destacados
 
-Los proyectos mas complejos incluyen:
-- **Django**: aplicación MVC completa
-- **Flask**: CRUD con plantillas
-- **FastAPI**: API RESTful con SQLAlchemy
+- Django
+- Flask
+- FastAPI
+- CRUD con SQLAlchemy
+- Autenticación JWT
+- Análisis de sentimientos
+- Machine Learning básico
 
-## Proyecto en linea
+## Proyecto en línea
 
-- **Django CRUD Auth**: https://django-crud-auth-ibxf.onrender.com/
+- Django CRUD Auth: https://django-crud-auth-ibxf.onrender.com/
 
 ---
 
-DairXP -- Aprendiendo Zzzz
+DairXP
